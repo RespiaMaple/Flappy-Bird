@@ -36,11 +36,9 @@ public class Player : MonoBehaviour
             direction = Vector3.up * strength;
         }
 
-        // Apply gravity and update the position
         direction.y += gravity * Time.deltaTime;
         transform.position += direction * Time.deltaTime;
 
-        // Tilt the bird based on the direction
         Vector3 rotation = transform.eulerAngles;
         rotation.z = direction.y * tilt;
         transform.eulerAngles = rotation;
